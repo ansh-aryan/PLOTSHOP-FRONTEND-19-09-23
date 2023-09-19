@@ -67,7 +67,7 @@ const Checkout = () => {
 
   return (
     <>
-      <section class="text-gray-400 body-font max-h-screen">
+      <section className="text-gray-400 body-font max-h-screen">
       <header className="text-gray-400  body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a href="/"className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
@@ -87,35 +87,35 @@ const Checkout = () => {
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center"></nav>
         </div>
       </header>
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-20">
-            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-white">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-20">
+            <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-white">
               Order Summary
             </h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               Summary of the order
             </p>
           </div>
-          <div class="lg:w-2/3 w-full mx-auto overflow-auto">
-            <table class="table-auto w-full text-left whitespace-no-wrap">
+          <div className="lg:w-2/3 w-full mx-auto overflow-auto">
+            <table className="table-auto w-full text-left whitespace-no-wrap">
               <thead>
                 <tr>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950 rounded-tl rounded-bl">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950 rounded-tl rounded-bl">
                     Product
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
                     Quantity
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
                     Type
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
                     Price
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
                     Tax
                   </th>
-                  <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-white text-xl bg-stone-950">
                     Total
                   </th>
                 </tr>
@@ -123,39 +123,39 @@ const Checkout = () => {
               <tbody>
                 {productCart.map((product) => (
                   <tr className="text-white text-lg bg-stone-950 ">
-                    <td class="px-3 py-3">{product.name}</td>
-                    <td class="px-3 py-3">{product.quantity}</td>
-                    <td class="px-3 py-3">{product.type}</td>
-                    <td class="px-3 py-3">₹ {product.price}</td>
-                    <td class="px-3 py-3">₹ {product.tax}</td>
-                    <td class="px-3 py-3">₹ {parseFloat(product.tax)*parseFloat(product.quantity)+ parseFloat(product.price) * parseFloat(product.quantity)}</td>
+                    <td className="px-3 py-3">{product.name}</td>
+                    <td className="px-3 py-3">{product.quantity}</td>
+                    <td className="px-3 py-3">{product.type}</td>
+                    <td className="px-3 py-3">₹ {product.price}</td>
+                    <td className="px-3 py-3">₹ {product.tax}</td>
+                    <td className="px-3 py-3">₹ {parseFloat(product.tax)*parseFloat(product.quantity)+ parseFloat(product.price) * parseFloat(product.quantity)}</td>
                   </tr>
                 ))}
                 {isBill ? (
                     <tr className="text-white text-lg bg-teal-800">
-                    <td class="px-3 py-6">TOTAL</td>
-                    <td class="px-3 py-6"></td>
-                    <td class="px-3 py-6"></td>
-                    <td class="px-3 py-6">₹ {totalBill}</td>
-                    <td class="px-3 py-6">₹ {parseFloat(totalTax).toFixed(2)}</td>
-                    <td class="px-3 py-6">₹ {parseFloat(totalTax+totalBill).toFixed(2)}</td>
+                    <td className="px-3 py-6">TOTAL</td>
+                    <td className="px-3 py-6"></td>
+                    <td className="px-3 py-6"></td>
+                    <td className="px-3 py-6">₹ {totalBill}</td>
+                    <td className="px-3 py-6">₹ {parseFloat(totalTax).toFixed(2)}</td>
+                    <td className="px-3 py-6">₹ {parseFloat(totalTax+totalBill).toFixed(2)}</td>
                   </tr>
                 ) : (
                   <tr>
-                    <td class="px-4 py-6"></td>
-                    <td class="px-4 py-6"></td>
-                    <td class="px-4 py-6"></td>
-                    <td class="px-4 py-6"></td>
-                    <td class="px-4 py-6"></td>
+                    <td className="px-4 py-6"></td>
+                    <td className="px-4 py-6"></td>
+                    <td className="px-4 py-6"></td>
+                    <td className="px-4 py-6"></td>
+                    <td className="px-4 py-6"></td>
                   </tr>
                 )}
               </tbody>
             </table>
           </div>
-          <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
+          <div className="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
             <button
               onClick={generateBill}
-              class="flex ml-auto text-xl text-white bg-teal-800 border-0 py-2 px-6 focus:outline-none hover:bg-teal-950 rounded"
+              className="flex ml-auto text-xl text-white bg-teal-800 border-0 py-2 px-6 focus:outline-none hover:bg-teal-950 rounded"
             >
               Generate Bill
             </button>
