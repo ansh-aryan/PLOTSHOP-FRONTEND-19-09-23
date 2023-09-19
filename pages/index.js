@@ -38,7 +38,7 @@ export default function Home() {
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center"></nav>
           <Link
-            href={`/checkout?cart=${btoa(JSON.stringify(cart))}`}
+            href={`/checkout/${btoa(JSON.stringify(cart))}`}
             className="inline-flex items-center bg-teal-600 border-0 py-1 px-3 focus:outline-none hover:bg-teal-900 hover:shadow-white-500/50 rounded text-white mt-4 md:mt-0 hover:shadow-sm hover:shadow-purple-500/50"
           >
             Checkout
