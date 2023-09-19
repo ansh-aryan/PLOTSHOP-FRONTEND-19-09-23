@@ -12,7 +12,7 @@ const Slug = ({cart}) => {
   const [totalTax, setTotalTax] = useState(0);
   const generateBill = () => {
     // Define the URL of your backend server
-    const backendURL = "http://localhost:8000"; // Replace with your actual server URL
+    const backendURL =  "https://plotshop-backend-19-09-23.onrender.com" || "http://localhost:8000"; // Replace with your actual server URL
 
     // Make a POST request to calculate the total bill
     fetch(`${backendURL}/total-bill`, {
