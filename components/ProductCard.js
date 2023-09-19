@@ -8,7 +8,7 @@ const ProductCard = ({ product, addToCart }) => {
   };
 
   const handleDecrement = () => {
-    if (quantity > 1) {
+    if (quantity >= 1) {
       setQuantity(quantity - 1);
     }
   };
@@ -28,6 +28,7 @@ const ProductCard = ({ product, addToCart }) => {
 
     // Call the addToCart callback function with the product and quantity
     addToCart(product.name, quantity, product.price, product.type, parseFloat(tax).toFixed(2));
+    
     }
     
   };
