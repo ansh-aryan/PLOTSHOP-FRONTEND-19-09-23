@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const Checkout = () => {
   const router = useRouter();
   const { cart } = router.query;
-  const productCart = JSON.parse(cart);
+  const productCart = JSON.parse(atob(cart));
   const [isBill, setIsBill] = useState(false);
   const [isTax, setIsTax] = useState(false);
   const [totalBill, setTotalBill] = useState(0);
