@@ -12,7 +12,7 @@ const Slug = ({cart}) => {
   const [totalTax, setTotalTax] = useState(0);
   const generateBill = () => {
     // Define the URL of your backend server
-    const backendURL =  "https://plotshop-backend-19-09-23.onrender.com" || "http://localhost:8000"; // Replace with your actual server URL
+    const backendURL =  "http://localhost:8000"; // Replace with your actual server URL
 
     // Make a POST request to calculate the total bill
     fetch(`${backendURL}/total-bill`, {
@@ -20,7 +20,7 @@ const Slug = ({cart}) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ cart }),
+      body: JSON.stringify({cart}),
     })
       .then((response) => {
         if (!response.ok) {
@@ -31,39 +31,19 @@ const Slug = ({cart}) => {
       .then((data) => {
         // Handle the data received from the server
         const totalBill = data.totalBill;
+        const totalTax = data.totalTax;  
         setTotalBill(totalBill);
+        setTotalTax(totalTax)
         setIsBill(true);
         console.log(`Total Bill: $${totalBill}`);
-      })
+        console.log(`Total Tax: $${totalTax}`);
+
+    })
       .catch((error) => {
         // Handle any errors that occurred during the fetch
         console.error("Fetch Error:", error);
       });
 
-      fetch(`${backendURL}/total-tax`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ cart }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Handle the data received from the server
-          const totalTax = data.totalTax;
-          setTotalTax(totalTax);
-         // setIsTax(true);
-          console.log(`Total Bill: $${totalTax}`);
-        })
-        .catch((error) => {
-          // Handle any errors that occurred during the fetch
-          console.error("Fetch Error:", error);
-        });
   };
 
   return (
